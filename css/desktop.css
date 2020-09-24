@@ -132,6 +132,10 @@ button:focus {
   text-decoration: underline;
 }
 
+.menu-button {
+  display: none;
+}
+
 .header-title {
   position: relative;
   display: block;
@@ -173,9 +177,13 @@ button:focus {
 
 .trend {
   position: relative;
-  max-width: calc(25% - 4px);
+  width: calc(25% - 4px);
+  min-height: 320px;
   margin-right: 4px;
   background-color: #606260;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
   overflow: hidden;
 }
 
@@ -194,11 +202,20 @@ button:focus {
   margin-right: 0;
 }
 
-.trend > img {
-  width: 100%;
-  object-fit: cover;
-  object-position: 50% 50%;
-  overflow: hidden;
+.trend1 {
+  background-image: url("../images/trend1.jpg");
+}
+
+.trend2 {
+  background-image: url("../images/trend2.jpg");
+}
+
+.trend3 {
+  background-image: url("../images/trend3.jpg");
+}
+
+.trend4 {
+  background-image: url("../images/trend4.jpg");
 }
 
 .trend > div {
@@ -348,7 +365,7 @@ button:focus {
   text-transform: uppercase;
   font-size: 14px;
   line-height: normal;
-  margin-bottom: 45px;
+  margin-bottom: 40px;
   position: relative;
   text-align: center;
 }
@@ -360,7 +377,7 @@ button:focus {
   height: 3px;
   background-color: #e1d9bd;
   position: absolute;
-  top: 1.6em;
+  top: 2em;
   left: 50%;
   margin-left: -33px;
 }
@@ -503,8 +520,6 @@ button:focus {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding-left: 25px;
-  padding-right: 25px;
   min-height: 440px;
   min-width: 345px;
   max-width: calc(33.333% - 65px);
@@ -515,12 +530,11 @@ button:focus {
   margin-right: 0;
 }
 
-/* .product-picture {  todo картинка не маштабируется
-  width: 100%;
-  object-fit: contain;
-  object-position: 50% 50%;
-  overflow: hidden;
-} */
+.product-picture {  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .product-name {
   font-weight: bold;
@@ -537,8 +551,6 @@ button:focus {
   height: 100%;
   margin-top: -50px;
   padding: 50px 25px 25px;
-  margin-left: -25px;
-  margin-right: -25px;
   border: 3px solid #b59f5b;
 }
 
