@@ -1,14 +1,15 @@
 @media (min-width: 361px) and (max-width: 1199px) {
   .container {
-    width: 700px;
-    padding-right: 0;
-    padding-left: 0;
+    width: 100%;
+    padding-right: 34px;
+    padding-left: 34px;
   }
 
   /* header */
 
   .header {
     margin-bottom: 50px;
+    background-image: url("../images/banner-bg-tablet.jpg");
   }
 
   .menu {
@@ -16,15 +17,7 @@
   }
 
   .menu-button {
-    position: relative;
     display: inline-block;
-    width: 23px;
-    height: 3px;
-    top: 0px;
-    border-radius: 5px;
-    background-color: #ffffff;
-    margin: 0;
-    cursor: pointer;
   }
 
   .menu-button::before,
@@ -67,10 +60,13 @@
 
   /* main */
 
+  .main-posts {
+    width: 55.714%;
+  }
+
   .main-post {
     flex-wrap: wrap;
-    width: 390px;
-    margin-right: 35px;
+    margin-right: 5%;
     margin-bottom: 40px;
     padding-bottom: 25px;
     border-bottom: 3px solid #eeeeee;
@@ -94,6 +90,10 @@
     font-size: 17px;
   }
 
+  .sidebar {
+    width: 38.571%;
+  }
+
   /* our products */
 
   .products {
@@ -101,8 +101,8 @@
   }
 
   .product {
-    min-width: 335px;
-    max-width: calc(50% - 25px);
+    /* min-width: 335px; */
+    min-width: calc(50% - 25px);
     margin-right: 25px;
     margin-bottom: 35px;
   }
