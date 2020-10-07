@@ -150,6 +150,7 @@ textarea:focus {
 
 .email-sub-text {
   font-size: 13px;
+  margin-right: 10px;
 }
 
 .email-sub-text::before {
