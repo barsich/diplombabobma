@@ -172,6 +172,7 @@ textarea:focus {
   min-height: 130px;
   max-height: 130px;
   resize: none;
+  font-size: 13px; /* для огнелиса */
 }
 
 .feedback-textarea:focus {
