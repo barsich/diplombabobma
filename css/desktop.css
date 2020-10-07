@@ -477,7 +477,8 @@ textarea:focus {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  width: 255px;
+  /* width: 255px; */
+  width: 150px; /* в таком случае, будет работать корректно при разных размерах окна */
 }
 
 .main-post-desc,
