@@ -6,42 +6,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/desktop.css">
   <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
   <title>diplomba</title>
 </head>
 
 <body>
 
+  <!-- popup -->
+
+  <div class="popup">
+    <div class="popup-container">
+      <div class="close-btn"><span class="visually-hidden">закрыть</span></div>
+      <h2 class="popup-title title-underline">ваш фидбек</h2>
+      <form class="popup-form">
+        <div class="attendance">
+          <label>
+            <h3>Как часто вы заходите на сайт?</h3>
+            <select name="popup-select">
+              <option value="почти каждый день">Почти каждый день</option>
+              <option value="раз в несколько дней">Раз в несколько дней</option>
+              <option value="раз в несколько недель">Раз в несколько недель</option>
+              <option value="несколько раз в год">Несколько раз в год</option>
+            </select>
+          </label>
+        </div>
+        <div class="email-sub">
+          <h3>Вы подписаны на e-mail рассылку?</h3>
+          <label>
+            <input type="radio" class="email-sub-radio" name="email-sub-radio" value="yes">
+            <span class="email-sub-text">Да</span>
+          </label>
+          <label>
+            <input type="radio" class="email-sub-radio" name="email-sub-radio" value="no">
+            <span class="email-sub-text">Нет</span>
+          </label>
+        </div>
+        <div class="feedback">
+          <label>
+            <h3>Расскажите, какой контент вы хотели бы видеть на нашем сайте?</h3>
+            <textarea class="feedback-textarea" placeholder="Может, больше рецептов?"></textarea>
+          </label>
+        </div>
+      </form>
+      <button class="feedback-btn btn" type="submit">отправить</button>
+    </div>
+  </div>
+
   <!-- header -->
 
   <header class="header">
-    <div class="container header-container">
-      <a href="#0"><img src="images/noemi-logo.svg" class="header-logo" alt="Логотип Noémi"></a>
-      <button class="menu-button">
-        <span class="visually-hidden">меню</span>
-      </button>
-      <nav class="menu">
-        <ul class="menu-list">
-          <li class="menu-list-item"><a class="menu-link" href="#0">главная</a>
-          </li>
-          <li class="menu-list-item">
-            <a class="menu-link" href="#0">посты</a>
-          </li>
-          <li class="menu-list-item">
-            <a class="menu-link" href="#0">статьи</a>
-          </li>
-          <li class="menu-list-item">
-            <a class="menu-link" href="#0">теги</a>
-          </li>
-          <li class="menu-list-item">
-            <a class="menu-link" href="#0">темы</a>
-          </li>
-          <li class="menu-list-item">
-            <a class="menu-link" href="#0">контакты</a>
-          </li>
-        </ul>
-      </nav>
+    <div class="container">
+      <div class="header-container">
+        <a href="#0"><img src="images/noemi-logo.svg" class="header-logo" alt="Логотип Noémi"></a>
+        <button class="menu-button">
+          <span class="visually-hidden">меню</span>
+        </button>
+        <nav class="menu">
+          <ul class="menu-list">
+            <li class="menu-list-item"><a class="menu-link" href="#0">главная</a>
+            </li>
+            <li class="menu-list-item">
+              <a class="menu-link" href="#0">посты</a>
+            </li>
+            <li class="menu-list-item">
+              <a class="menu-link" href="#0">статьи</a>
+            </li>
+            <li class="menu-list-item">
+              <a class="menu-link" href="#0">теги</a>
+            </li>
+            <li class="menu-list-item">
+              <a class="menu-link" href="#0">темы</a>
+            </li>
+            <li class="menu-list-item">
+              <a class="menu-link" href="#0">контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <h1 class="header-title">Блог о творчестве, спорте, и образе жизни</h1>
     </div>
-    <h1 class="header-title">Блог о творчестве, спорте, и образе жизни</h1>
   </header>
 
   <!-- trends -->
@@ -302,7 +345,7 @@
         <picture class="product-picture">
           <source media="(min-width: 1200px)" srcset="images/shop-item-desk2.jpg">
           <source media="(min-width: 360px) and (max-width: 1199px)" srcset="images/shop-item-tablet2.jpg">
-          <source media="(max-width: 359px)" srcset="images/shop-item-mobile2.jpg">
+          <source media="(max-width: 359px)" srcset="images/shop-item-mobilet2.jpg">
           <img alt="Кукла «Зайчик»">
         </picture>
         <div class="product-body">
@@ -320,7 +363,7 @@
         <picture class="product-picture">
           <source media="(min-width: 1200px)" srcset="images/shop-item-desk3.jpg">
           <source media="(min-width: 360px) and (max-width: 1199px)" srcset="images/shop-item-tablet3.jpg">
-          <source media="(max-width: 359px)" srcset="images/shop-item-mobile3.jpg">
+          <source media="(max-width: 359px)" srcset="images/shop-item-mobilet3.jpg">
           <img alt="Шестиугольная рамка">
         </picture>
         <div class="product-body">
