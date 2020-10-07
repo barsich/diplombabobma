@@ -1,27 +1,25 @@
 @font-face {
   font-family: "OpenSans";
-  src: url("../fonts/OpenSans-Regular.woff") format("woff"), 
-    url("../fonts/OpenSans-Regular.woff2") format("woff2"), 
-    url("../fonts/OpenSans-Regular.ttf") format("ttf");
+  src: url("../fonts/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans-Regular.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "OpenSans";
-  src: url("../fonts/OpenSans-Bold.woff") format("woff"), 
-    url("../fonts/OpenSans-Bold.woff2") format("woff2"), 
-    url("../fonts/OpenSans-Bold.ttf") format("ttf");
+  src: url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold.woff2") format("woff2"), url("../fonts/OpenSans-Bold.ttf") format("ttf");
   font-weight: bold;
   font-style: normal;
 }
-
-/* header */
 
 * {
   margin: 0;
   padding: 0;
   font-family: "OpenSans", Arial, sans-serif;
+}
+
+body {
+  position: relative;
 }
 
 a {
@@ -34,7 +32,9 @@ li {
 }
 
 input,
-button {
+button,
+select,
+textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   border: none;
@@ -53,9 +53,136 @@ button:hover {
 }
 
 input:focus,
-button:focus {
+button:focus,
+select:focus,
+textarea:focus {
   outline: none;
 }
+
+/* popup */
+
+.popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  opacity: 0.6;
+}
+
+.popup-container {
+  position: relative;
+  width: 390px;
+  height: 600px;
+  padding: 55px 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.close-btn {
+  width: 20px;
+  height: 20px;
+  background-image: url(../images/form-x.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  right: 0;
+  top: -30px;
+}
+
+.popup-title {
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 45px;
+  font-size: 20px;
+  line-height: normal;
+}
+
+.popup-form {
+  margin-bottom: 30px;
+}
+
+.popup-form > div {
+  margin-top: 30px;
+}
+
+.popup-form > div:first-child {
+  margin-top: 0;
+}
+
+.popup-form h3 {
+  font-size: 13px;
+  line-height: normal;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.attendance select  {
+  color: #727070;
+  background-image: url(../images/form-arrows.svg);
+  background-repeat: no-repeat;
+  background-position: center right 15px;
+  background-size: 10px;
+}
+
+.attendance select:focus {
+  background-position: center right 13px;
+}
+
+.email-sub-text {
+  font-size: 13px;
+}
+
+.email-sub-text::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("../images/form-empty-circle.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+  }
+
+.email-sub-radio:checked ~ .email-sub-text::before {
+  background-image: url("../images/form-circle.svg");
+}
+
+.feedback-textarea {
+  min-height: 130px;
+  max-height: 130px;
+  resize: none;
+}
+
+.feedback-textarea:focus {
+  padding: 13px 18px;
+}
+
+.feedback-btn {
+  width: 100%;
+}
+
+/* header */
 
 .header {
   box-sizing: border-box;
@@ -93,6 +220,7 @@ button:focus {
 
 .header-container {
   box-sizing: border-box;
+  width: 100%;
   position: relative;
   z-index: 1;
   display: flex;
@@ -134,18 +262,30 @@ button:focus {
 
 .menu-button {
   display: none;
+  position: relative;
+  width: 23px;
+  height: 3px;
+  top: 0px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin: 0;
+  cursor: pointer;
 }
 
 .header-title {
   position: relative;
   display: block;
+  box-sizing: border-box;
   font-weight: bold;
   color: #ffffff;
   text-transform: uppercase;
-  width: 690px;
+  /* width: 720px; */
+  min-width: 57.5%;
+  max-width: 720px;
   font-size: 45px;
   line-height: 1.67;
   margin: 0 auto;
+  padding: 0 15px;
   text-align: center;
   margin-top: 125px;
 }
@@ -346,6 +486,7 @@ button:focus {
   color: #000000;
   font-size: 15px;
   line-height: 22px;
+  margin-bottom: 0.5em;
 }
 
 /* aside */
@@ -354,8 +495,12 @@ button:focus {
   width: 272px;
 }
 
-.aside-posts {
+.sidebar > * {
   margin-bottom: 60px;
+}
+
+.sidebar > *:last-child {
+  margin-bottom: 0;
 }
 
 .sidebar-title {
@@ -366,7 +511,6 @@ button:focus {
   font-size: 14px;
   line-height: normal;
   margin-bottom: 40px;
-  position: relative;
   text-align: center;
 }
 
@@ -403,11 +547,14 @@ button:focus {
 
 .search {
   display: flex;
-  margin-bottom: 60px;
+}
+
+.search label {
+  width: 100%;
 }
 
 .search input {
-  width: 220px;
+  width: 100%;
   height: 50px;
   background-color: #f4f7f6;
   padding: 15px 20px;
@@ -423,6 +570,7 @@ button:focus {
 
 .search button {
   width: 50px;
+  flex-shrink: 0;
   background-image: url("../images/search.svg");
   background-repeat: no-repeat;
   background-size: 18px;
@@ -436,11 +584,9 @@ button:focus {
   position: absolute;
 }
 
-.subscription {
-  margin-bottom: 60px;
-}
-
-.subscription-form input {
+.subscription-form input,
+.attendance select,
+.feedback-textarea {
   box-sizing: border-box;
   display: block;
   width: 100%;
@@ -450,17 +596,15 @@ button:focus {
   margin-bottom: 20px;
 }
 
-.subscription-form input:focus {
+.subscription-form input:focus,
+.attendance select:focus,
+.feedback-textarea:focus {
   border: 2px solid #b59f5b;
   padding-left: 18px; /* паддинг минус бордер, чтобы не съезжал плейсхолдер */
 }
 
 .subscription-form button {
   width: 100%;
-}
-
-.tag-cloud {
-  margin-bottom: 60px;
 }
 
 .tag-list-item {
@@ -485,10 +629,6 @@ button:focus {
   border-color: #b59f5b;
 }
 
-.themes {
-  margin-bottom: 60px;
-}
-
 .themes-list-item {
   display: block;
   box-sizing: border-box;
@@ -497,6 +637,10 @@ button:focus {
   border-bottom: 1px solid #eeeeee;
   padding: 15px 2px;
   font-weight: bold;
+}
+
+.themes-list-item a {
+  margin-right: 3px;
 }
 
 .themes-list-item a:hover {
@@ -521,7 +665,7 @@ button:focus {
   flex-direction: column;
   box-sizing: border-box;
   min-height: 440px;
-  min-width: 345px;
+  /* min-width: 345px; */
   max-width: calc(33.333% - 65px);
   margin-right: 65px;
 }
@@ -530,10 +674,17 @@ button:focus {
   margin-right: 0;
 }
 
-.product-picture {  
-  display: block;
+.product-picture {
+  width: calc(100% - 56px);
+  object-fit: contain;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.product-picture img {
+  width: 100%;
+  display: block;
 }
 
 .product-name {
@@ -584,6 +735,7 @@ button:focus {
   height: 30%;
   font-weight: bold;
   line-height: normal;
+  margin-right: 5px;
 }
 
 .product-discount {
@@ -597,6 +749,8 @@ button:focus {
 
 .product-btn {
   height: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 /* footer */
