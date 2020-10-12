@@ -69,9 +69,10 @@ textarea:focus {
   left: 0;
   z-index: 9999;
   display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
-  display: none;
+  overflow: auto;
 }
 
 .popup::before {
@@ -90,8 +91,7 @@ textarea:focus {
   width: 390px;
   height: 600px;
   padding: 55px 30px;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin: 15px;
   box-sizing: border-box;
   background-color: #ffffff;
 }
