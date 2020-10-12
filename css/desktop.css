@@ -71,6 +71,7 @@ textarea:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 
 .popup::before {
@@ -78,8 +79,8 @@ textarea:focus {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: #000000;
   opacity: 0.6;
 }
@@ -98,7 +99,7 @@ textarea:focus {
 .close-btn {
   width: 20px;
   height: 20px;
-  background-image: url(../images/form-x.svg);
+  background-image: url("../images/form-x.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -367,7 +368,7 @@ textarea:focus {
   right: 20px;
   bottom: 15px;
   left: 20px;
-  padding: 35px;
+  padding: 10%;
   border: 3px solid #b59f5b;
 }
 
@@ -728,31 +729,37 @@ textarea:focus {
 .product-footer {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  height: 50px;
+  justify-content: space-between;
+  min-height: 50px;
   width: 100%;
 }
 
-.product-discount,
 .product-price {
+  display: flex;
+  flex-direction: column;
+  height: 55px;
+}
+
+.price-discount,
+.price-actual {
   height: 30%;
   font-weight: bold;
   line-height: normal;
   margin-right: 5px;
 }
 
-.product-discount {
+.price-discount {
   font-size: 14px;
   text-decoration: line-through;
 }
 
-.product-price {
+.price-actual {
   font-size: 20px;
 }
 
 .product-btn {
-  height: 100%;
+  height: 50px;
+  flex-basis: 140px;
   padding-left: 5px;
   padding-right: 5px;
 }
