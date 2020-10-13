@@ -7,8 +7,14 @@
 
   /* popup */
 
+  .popup {
+    justify-content: unset;
+    align-items: unset;
+  }
+
   .popup-container {
     width: calc(100% - 30px);
+    margin: 55px 15px;
   }
 
   /* header */
