@@ -18,6 +18,11 @@
   font-family: "OpenSans", Arial, sans-serif;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   position: relative;
 }
@@ -548,7 +553,7 @@ textarea:focus {
 
 .aside-post-title {
   font-size: 14px;
-  text-align: 18px;
+  line-height: 18px;
   text-transform: uppercase;
 }
 
